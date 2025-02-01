@@ -20,90 +20,88 @@ type Props = {
 
 const config = loadConfig();
 
-/**
- * Unfortunately Auth0 https://<DOMAIN>/.well-known/openid-configuration doesn't contain end_session_endpoint that
- * is required for doing logout. Therefore, we need to hardcode the config for auth
+/** 
+ * We skip userinfo_endpoint entirely (or set it to ""), 
+ * because your server doesn't offer a separate /userinfo. 
+ * We also define token_endpoint = /auth.
  */
-const auth0AuthorityConfig: AuthorityConfiguration = {
-  authorization_endpoint: new URL("authorize", config.authority).href,
-  token_endpoint: new URL("oauth/token", config.authority).href,
-  revocation_endpoint: new URL("oauth/revoke", config.authority).href,
-  end_session_endpoint: new URL("v2/logout", config.authority).href,
-  userinfo_endpoint: new URL("userinfo", config.authority).href,
-  issuer: new URL("", config.authority).href,
+const customAuthorityConfig: AuthorityConfiguration = {
+  authorization_endpoint: "https://auth.dcd.local/oauth/authorize",
+  token_endpoint: "https://auth.dcd.local/auth/me", 
+  // no userinfo
+  userinfo_endpoint: "",
+  end_session_endpoint: "https://auth.dcd.local/auth/logout",
+  revocation_endpoint: "https://auth.dcd.local/auth/revoke",
+  issuer: "https://auth.dcd.local",
 };
 
-const onEvent = (configurationName: any, eventName: any, data: any) => {
+// For debugging if needed
+const onEvent = (configurationName: string, eventName: string, data: unknown) => {
   if (process.env.NODE_ENV !== "production") {
-    //console.info(`oidc:${configurationName}:${eventName}`, data);
+    console.info(`oidc:${configurationName}:${eventName}`, data);
   }
 };
 
 export default function OIDCProvider({ children }: Props) {
   const [providerConfig, setProviderConfig] = useState<OidcConfiguration>();
   const [mounted, setMounted] = useState(false);
+
   const router = useRouter();
   const path = usePathname();
   const params = useSearchParams()?.toString();
   const [, setQueryParams] = useLocalStorage("netbird-query-params", params);
 
   useEffect(() => {
-    if (
-      params?.includes("tab") ||
-      params?.includes("search") ||
-      params?.includes("id")
-    ) {
+    if (params?.includes("tab") || params?.includes("search") || params?.includes("id")) {
       setQueryParams(params);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [params, setQueryParams]);
 
-  const withCustomHistory = () => {
-    return {
-      replaceState: (url: any) => {
-        router.replace(url);
-        window.dispatchEvent(new Event("popstate"));
-      },
-    };
-  };
+  // If you want Next.js routing integrated, define a custom history
+  const withCustomHistory = () => ({
+    replaceState: (url: string) => {
+      router.replace(url);
+      window.dispatchEvent(new Event("popstate"));
+    },
+  });
 
   useEffect(() => {
-    setProviderConfig({
-      authority: config.authority,
-      client_id: config.clientId,
-      redirect_uri: window.location.origin + config.redirectURI,
-      refresh_time_before_tokens_expiration_in_second: 30,
+    const extras = buildExtras(); // Additional query params if needed
+
+    // Build the OIDC config for the library
+    const finalConfig: OidcConfiguration = {
+      authority: config.authority, // e.g. "https://auth.dcd.local"
+      client_id: config.clientId,   // e.g. "digital_code_distribution_vpn"
+      redirect_uri: window.location.origin + config.redirectURI, 
       silent_redirect_uri: window.location.origin + config.silentRedirectURI,
-      scope: config.scopesSupported,
-      // disabling service worker
-      //service_worker_relative_url: "/OidcServiceWorker.js",
+      scope: config.scopesSupported, // "openid profile email"
+      refresh_time_before_tokens_expiration_in_second: 30,
       service_worker_only: false,
-      authority_configuration: config.auth0Auth
-        ? auth0AuthorityConfig
-        : undefined,
-      extras: buildExtras(),
+
+      authority_configuration: customAuthorityConfig, 
+      extras,
       ...(config.clientSecret
         ? { token_request_extras: { client_secret: config.clientSecret } }
         : null),
-    });
+    };
+
+    setProviderConfig(finalConfig);
     setMounted(true);
   }, []);
 
-  // We bypass authentication for pages that do not require auth.
-  // E.g., when we just want to show installation steps for public.
+  // If certain pages are public
   if (path === "/install") return children;
 
   return mounted && providerConfig ? (
     <OidcProvider
       configuration={providerConfig}
-      //withCustomHistory={withCustomHistory}
+      // withCustomHistory={withCustomHistory}
       authenticatingComponent={FullScreenLoading}
       authenticatingErrorComponent={OIDCError}
       loadingComponent={FullScreenLoading}
       callbackSuccessComponent={CallBackSuccess}
       onEvent={onEvent}
-      onSessionLost={() => void 0}
-      //sessionLostComponent={SessionLost}
+      onSessionLost={() => {}}
     >
       <SecureProvider>{children}</SecureProvider>
     </OidcProvider>
@@ -116,6 +114,7 @@ const CallBackSuccess = () => {
   const params = useSearchParams();
   const errorParam = params.get("error");
   const currentPath = usePathname();
+
   useRedirect(currentPath, true, !errorParam);
   return <FullScreenLoading />;
 };
