@@ -1,0 +1,26 @@
+{
+    "Stuns": null,
+    "TURNConfig": null,
+    "Relay": null,
+    "Signal": null,
+    "Datadir": "/var/lib/netbird",
+    "DataStoreEncryptionKey": "SZNXUgX6faO1+hadrTekwuLUy3NomG+xCeOUkwJgUII=",
+    "HttpConfig": {
+        "AuthAudience": "https://auth.dcd.local",
+        "AuthIssuer": "https://auth.dcd.local",
+        "AuthUserIDClaim": "sub",
+        "AuthKeysLocation": "file:///etc/netbird/jwks.json",
+        "IdpSignKeyRefreshEnabled": false
+    },
+    "IdpManagerConfig": null,
+    "DeviceAuthorizationFlow": null,
+    "PKCEAuthorizationFlow": null,
+    "StoreConfig": {
+        "Engine": "sqlite"
+    },
+    "ReverseProxy": {
+        "TrustedHTTPProxies": null,
+        "TrustedHTTPProxiesCount": 0,
+        "TrustedPeers": null
+    }
+}
