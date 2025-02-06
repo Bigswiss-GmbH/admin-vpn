@@ -1,0 +1,106 @@
+{
+    "Stuns": [
+        {
+            "Proto": "udp",
+            "URI": "stun:vpn.dcd.ltd:3478",
+            "Username": "",
+            "Password": ""
+        }
+    ],
+    "TURNConfig": {
+        "TimeBasedCredentials": false,
+        "CredentialsTTL": "12h0m0s",
+        "Secret": "secret",
+        "Turns": [
+            {
+                "Proto": "udp",
+                "URI": "turn:vpn.dcd.ltd:3478",
+                "Username": "self",
+                "Password": "Ke3vz/0MJX3pzAmjKmQuoljg09eRAk8rKFWuHdORtSs"
+            }
+        ]
+    },
+    "Relay": {
+        "Addresses": [
+            "rel://vpn.dcd.ltd:33080"
+        ],
+        "CredentialsTTL": "24h0m0s",
+        "Secret": "DkKjcqESsDtJaZka5cYWBtaTwZd+zcOCfOMe5ZgMvQM"
+    },
+    "Signal": {
+        "Proto": "https",
+        "URI": "vpn.dcd.ltd:10000",
+        "Username": "",
+        "Password": ""
+    },
+    "Datadir": "/var/lib/netbird/",
+    "DataStoreEncryptionKey": "U1W2inTBFQHeCu7E3WY48e39jcn/9WpbMDzjf9in6H4=",
+    "HttpConfig": {
+        "LetsEncryptDomain": "",
+        "CertFile": "",
+        "CertKey": "",
+        "AuthAudience": "https://auth.dcd.ltd",
+        "AuthIssuer": "https://auth.dcd.ltd",
+        "AuthUserIDClaim": "",
+        "AuthKeysLocation": "https://auth.dcd.ltd/.well-known/jwks.json",
+        "OIDCConfigEndpoint": "https://auth.dcd.ltd/.well-known/openid-configuration",
+        "IdpSignKeyRefreshEnabled": false,
+        "ExtraAuthAudience": ""
+    },
+    "IdpManagerConfig": {
+        "ManagerType": "none",
+        "ClientConfig": {
+            "Issuer": "https://auth.dcd.ltd",
+            "TokenEndpoint": "https://auth.dcd.ltd/auth/me",
+            "ClientID": "digital_code_distribution_vpn",
+            "ClientSecret": "",
+            "GrantType": "client_credentials"
+        },
+        "ExtraConfig": {},
+        "Auth0ClientCredentials": null,
+        "AzureClientCredentials": null,
+        "KeycloakClientCredentials": null,
+        "ZitadelClientCredentials": null
+    },
+    "DeviceAuthorizationFlow": {
+        "Provider": "none",
+        "ProviderConfig": {
+            "ClientID": "",
+            "ClientSecret": "",
+            "Domain": "",
+            "Audience": "https://auth.dcd.ltd",
+            "TokenEndpoint": "https://auth.dcd.ltd/auth/me",
+            "DeviceAuthEndpoint": "null",
+            "AuthorizationEndpoint": "",
+            "Scope": "openid",
+            "UseIDToken": false,
+            "RedirectURLs": null
+        }
+    },
+    "PKCEAuthorizationFlow": {
+        "ProviderConfig": {
+            "ClientID": "digital_code_distribution_vpn",
+            "ClientSecret": "",
+            "Domain": "",
+            "Audience": "https://auth.dcd.ltd",
+            "TokenEndpoint": "https://auth.dcd.ltd/auth/me",
+            "DeviceAuthEndpoint": "",
+            "AuthorizationEndpoint": "https://auth.dcd.ltd/oauth/authorize",
+            "Scope": "openid profile email",
+            "UseIDToken": false,
+            "RedirectURLs": [
+                "http://localhost:53000"
+            ]
+        }
+    },
+    "StoreConfig": {
+        "Engine": "sqlite"
+    },
+    "ReverseProxy": {
+        "TrustedHTTPProxies": [],
+        "TrustedHTTPProxiesCount": 0,
+        "TrustedPeers": [
+            "0.0.0.0/0"
+        ]
+    }
+}

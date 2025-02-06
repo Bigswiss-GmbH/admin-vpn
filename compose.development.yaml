@@ -1,0 +1,45 @@
+
+services:
+  management:
+    container_name: netbird-management
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+      target: dev
+    network_mode: "host"
+    ports:
+      - "33073:33073"
+    volumes:
+      - netbird-mgmt-data:/var/lib/netbird
+      - ./backend/management.json:/etc/netbird/management.json
+      - ./backend/dcd.cert.pem:/usr/local/share/ca-certificates/dcd.crt
+    entrypoint: ["/bin/sh"]  # override the image's default
+    command:
+      - "-c"
+      - |
+        update-ca-certificates
+        /go/bin/netbird-mgmt management \
+          --datadir /var/lib/netbird \
+          --log-file console \
+          --log-level debug \
+          --config /etc/netbird/management.json \
+          --port=33073 \
+
+  dashboard:
+    container_name: netbird-dashboard
+    build:
+      context: ./frontend
+      dockerfile: docker/Dockerfile.frontend
+      target: dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - management
+    environment:
+      - API_ORIGIN=http://management:33073
+    network_mode: "host"  
+
+
+
+volumes:
+  netbird-mgmt-data:
