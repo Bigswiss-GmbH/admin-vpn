@@ -28,8 +28,8 @@ export default function DangerZoneTab({ account }: Props) {
 
   const deleteAccount = async () => {
     notify({
-      title: "Delete NetBird account",
-      description: "NetBird account was successfully deleted.",
+      title: "Delete dcdVPN account",
+      description: "dcdVPN account was successfully deleted.",
       promise: deleteRequest.del().then(() => {
         logoutSession().then();
       }),
@@ -39,9 +39,9 @@ export default function DangerZoneTab({ account }: Props) {
 
   const handleConfirm = async () => {
     const choice = await confirm({
-      title: "Delete NetBird account",
+      title: "Delete dcdVPN account",
       description:
-        "Are you sure you want to delete your NetBird account? This action cannot be undone.",
+        "Are you sure you want to delete your dcdVPN account? This action cannot be undone.",
       confirmText: "Delete",
       cancelText: "Cancel",
       type: "danger",
@@ -75,10 +75,10 @@ export default function DangerZoneTab({ account }: Props) {
           >
             <div className={"px-8 py-6"}>
               <p className={"text-xl font-medium mb-2 !text-red-50"}>
-                Delete NetBird account
+                Delete dcdVPN account
               </p>
               <p className={"!text-red-50/80"}>
-                Before proceeding to delete your Netbird account, please be
+                Before proceeding to delete your dcdVPN account, please be
                 aware that this action is irreversible. Once your account is
                 deleted, you will permanently lose access to all associated
                 data, including your peers, users, groups, policies, and routes.

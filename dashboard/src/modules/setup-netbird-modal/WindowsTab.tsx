@@ -32,7 +32,7 @@ export default function WindowsTab({ setupKey }: Readonly<Props>) {
               >
                 <Button variant={"primary"}>
                   <DownloadIcon size={14} />
-                  Download NetBird
+                  Download dcdVPN
                 </Button>
               </Link>
             </div>
@@ -41,7 +41,7 @@ export default function WindowsTab({ setupKey }: Readonly<Props>) {
           {GRPC_API_ORIGIN && (
             <Steps.Step step={2}>
               <p>
-                {`Click on "Settings" from the NetBird icon in your system tray and enter the following "Management URL"`}
+                {`Click on "Settings" from the dcdVPN icon in your system tray and enter the following "Management URL"`}
               </p>
               <Code>
                 <Code.Line>{GRPC_API_ORIGIN}</Code.Line>
@@ -51,7 +51,7 @@ export default function WindowsTab({ setupKey }: Readonly<Props>) {
 
           {setupKey ? (
             <Steps.Step step={GRPC_API_ORIGIN ? 3 : 2} line={false}>
-              <p>Open Command-line and run NetBird</p>
+              <p>Open Command-line and run dcdVPN</p>
               <Code>
                 <Code.Line>
                   {getNetBirdUpCommand()}
@@ -64,7 +64,7 @@ export default function WindowsTab({ setupKey }: Readonly<Props>) {
               <Steps.Step step={GRPC_API_ORIGIN ? 3 : 2}>
                 <p>
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  Click on "Connect" from the NetBird icon in your system tray
+                  Click on "Connect" from the dcdVPN icon in your system tray
                 </p>
               </Steps.Step>
               <Steps.Step step={GRPC_API_ORIGIN ? 4 : 3} line={false}>

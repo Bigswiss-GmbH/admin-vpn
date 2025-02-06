@@ -74,7 +74,7 @@ export default function NetworkSettingsTab({ account }: Props) {
               }
               helpText={
                 <>
-                  Allow routing using DNS wildcards. This requires NetBird
+                  Allow routing using DNS wildcards. This requires dcdVPN
                   client v0.35 or higher. Changes will only take effect after
                   restarting the clients.
                 </>

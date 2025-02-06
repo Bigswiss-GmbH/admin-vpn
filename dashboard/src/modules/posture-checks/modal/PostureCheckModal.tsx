@@ -163,7 +163,7 @@ export default function PostureCheckModal({
                         payload: e.target.value,
                       })
                     }
-                    placeholder={"e.g., NetBird Version > 0.25.0"}
+                    placeholder={"e.g., dcdVPN Version > 0.25.0"}
                   />
                 </div>
                 <div>
@@ -181,7 +181,7 @@ export default function PostureCheckModal({
                       })
                     }
                     placeholder={
-                      "e.g., Check if the NetBird version is bigger than 0.25.0"
+                      "e.g., Check if the dcdVPN version is bigger than 0.25.0"
                     }
                     rows={3}
                   />

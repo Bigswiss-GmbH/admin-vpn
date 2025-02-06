@@ -28,9 +28,9 @@ export const PostureCheckNetBirdVersion = ({ value, onChange }: Props) => {
       setOpen={setOpen}
       key={open ? 1 : 0}
       active={value?.min_version !== undefined}
-      title={"NetBird Client Version"}
+      title={"dcdVPN Client Version"}
       description={
-        "Restrict access to peers with a specific NetBird client version."
+        "Restrict access to peers with a specific dcdVPN client version."
       }
       icon={<NetBirdIcon size={18} />}
       modalWidthClass={"max-w-lg"}
@@ -67,7 +67,7 @@ const CheckContent = ({ value, onChange }: Props) => {
         <div>
           <Label>Minimum required version</Label>
           <HelpText>
-            Only peers with the minimum specified NetBird client version will
+            Only peers with the minimum specified dcdVPN client version will
             have access to the network.
           </HelpText>
           <div>

@@ -67,7 +67,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> was added
-        with the NetBird IP <Value>{m.ip}</Value>
+        with the dcdVPN IP <Value>{m.ip}</Value>
       </div>
     );
 
@@ -167,7 +167,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> with
-        NetBird IP <Value>{m.ip}</Value> was deleted
+        dcdVPN IP <Value>{m.ip}</Value> was deleted
       </div>
     );
 
@@ -175,7 +175,7 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> was added
-        with the NetBird IP <Value>{m.ip}</Value>
+        with the dcdVPN IP <Value>{m.ip}</Value>
       </div>
     );
 
@@ -183,14 +183,14 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Peer <Value>{m.name}</Value> <PeerConnectionInfo meta={m} /> with
-        NetBird IP <Value>{m.ip}</Value> was updated
+        dcdVPN IP <Value>{m.ip}</Value> was updated
       </div>
     );
 
   if (event.activity_code == "user.join")
     return (
       <div className={"inline"}>
-        User <Value>{m.username}</Value> joined NetBird
+        User <Value>{m.username}</Value> joined dcdVPN
       </div>
     );
 
@@ -278,14 +278,14 @@ export default function ActivityDescription({ event }: Props) {
     return (
       <div className={"inline"}>
         Group <Value>{m.group}</Value> was removed from the peer with the
-        NetBird IP <Value>{m.peer_ip}</Value>
+        dcdVPN IP <Value>{m.peer_ip}</Value>
       </div>
     );
 
   if (event.activity_code == "peer.group.add")
     return (
       <div className={"inline"}>
-        Group <Value>{m.group}</Value> was added to the peer with the NetBird IP{" "}
+        Group <Value>{m.group}</Value> was added to the peer with the dcdVPN IP{" "}
         <Value>{m.peer_ip}</Value>
       </div>
     );
@@ -328,7 +328,7 @@ export default function ActivityDescription({ event }: Props) {
   if (event.activity_code == "peer.rename")
     return (
       <div className={"inline"}>
-        Peer with the NetBird IP <Value>{m.ip}</Value> was renamed to{" "}
+        Peer with the dcdVPN IP <Value>{m.ip}</Value> was renamed to{" "}
         <Value>{m.name}</Value>
       </div>
     );
@@ -336,7 +336,7 @@ export default function ActivityDescription({ event }: Props) {
   if (event.activity_code == "peer.approve")
     return (
       <div className={"inline"}>
-        Peer with the NetBird IP <Value>{m.ip}</Value> was approved
+        Peer with the dcdVPN IP <Value>{m.ip}</Value> was approved
       </div>
     );
 

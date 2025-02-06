@@ -39,7 +39,7 @@ export const AccessiblePeersSection = ({ peerID }: Props) => {
           <div>
             <h2 ref={headingRef}>Accessible Peers</h2>
             <Paragraph>
-              This peer can connect to the following peers within the NetBird
+              This peer can connect to the following peers within the dcdVPN
               network.
             </Paragraph>
           </div>

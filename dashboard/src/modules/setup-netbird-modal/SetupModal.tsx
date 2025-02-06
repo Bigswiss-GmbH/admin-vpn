@@ -91,15 +91,15 @@ export function SetupModalContent({
                 {`It's time to add your first device.`}
               </>
             ) : (
-              <>Install NetBird{setupKey && " with Setup Key"}</>
+              <>Install dcdVPN{setupKey && " with Setup Key"}</>
             )}
           </h2>
           <Paragraph
             className={cn("mx-auto mt-3", setupKey ? "max-w-sm" : "max-w-xs")}
           >
             {setupKey
-              ? "To get started, install and run NetBird with the setup key as a parameter."
-              : "To get started, install NetBird and log in with your email account."}
+              ? "To get started, install and run dcdVPN with the setup key as a parameter."
+              : "To get started, install dcdVPN and log in with your email account."}
           </Paragraph>
         </div>
       )}

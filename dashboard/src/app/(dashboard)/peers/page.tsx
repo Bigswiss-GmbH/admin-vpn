@@ -89,7 +89,7 @@ function PeersBlockedView() {
       <div className={"p-default py-6 max-w-3xl text-center"}>
         <h1>Add new device to your network</h1>
         <Paragraph className={"inline"}>
-          To get started, install NetBird and log in using your email account.
+          To get started, install dcdVPN and log in using your email account.
           After that you should be connected. If you have further questions
           check out our{" "}
           <InlineLink

@@ -210,7 +210,7 @@ export default function AuthenticationTab({ account }: Props) {
             <HelpText className={"inline"}>
               <>
                 If your IdP supports MFA, it will work automatically with
-                NetBird.
+                dcdVPN.
                 <br /> Otherwise, contact us at{" "}
                 <InlineLink
                   href={"mailto:support@netbird.io"}

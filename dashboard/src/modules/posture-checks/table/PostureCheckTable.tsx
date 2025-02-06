@@ -167,7 +167,7 @@ export default function PostureCheckTable({
             }
             title={"Create Posture Check"}
             description={
-              "Add posture checks to further restrict access in your network. E.g., only clients with a specific NetBird client version, operating system or location are allowed to connect."
+              "Add posture checks to further restrict access in your network. E.g., only clients with a specific dcdVPN client version, operating system or location are allowed to connect."
             }
             button={
               <Button

@@ -40,7 +40,7 @@ export default function LinuxTab({
           </Steps.Step>
           <Steps.Step step={2} line={false}>
             <p>
-              Run NetBird {!setupKey && "and log in the browser"}
+              Run dcdVPN {!setupKey && "and log in the browser"}
               {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
             </p>
             <Code>
@@ -80,7 +80,7 @@ export default function LinuxTab({
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={2}>
-                  <p>Install NetBird</p>
+                  <p>Install dcdVPN</p>
                   <Code
                     codeToCopy={[
                       `sudo apt-get update`,
@@ -97,7 +97,7 @@ export default function LinuxTab({
                 </Steps.Step>
                 <Steps.Step step={3} line={false}>
                   <p>
-                    Run NetBird {!setupKey && "and log in the browser"}
+                    Run dcdVPN {!setupKey && "and log in the browser"}
                     {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
                   </p>
                   <Code>

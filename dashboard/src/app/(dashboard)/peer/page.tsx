@@ -347,11 +347,11 @@ function PeerInformationCard({ peer }: { peer: Peer }) {
       <Card.List>
         <Card.ListItem
           copy
-          copyText={"NetBird IP-Address"}
+          copyText={"dcdVPN IP-Address"}
           label={
             <>
               <MapPin size={16} />
-              NetBird IP-Address
+              dcdVPN IP-Address
             </>
           }
           value={peer.ip}

@@ -25,13 +25,13 @@ export default function NavbarWithDropdown() {
         <Image
           src={NetBirdLogoFull}
           height={22}
-          alt={"NetBird Logo"}
+          alt={"dcdVPN Logo"}
           className={"hidden md:block"}
         />
         <Image
           src={NetBirdLogo}
           width={30}
-          alt={"NetBird Logo"}
+          alt={"dcdVPN Logo"}
           className={"md:hidden"}
         />
       </>

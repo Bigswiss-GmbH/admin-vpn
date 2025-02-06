@@ -94,7 +94,7 @@ export default function MacOSTab({ setupKey }: Readonly<Props>) {
           {GRPC_API_ORIGIN && (
             <Steps.Step step={2}>
               <p>
-                {`Click on "Settings" from the NetBird icon in your system tray and enter the following "Management URL"`}
+                {`Click on "Settings" from the dcdVPN icon in your system tray and enter the following "Management URL"`}
               </p>
               <Code>
                 <Code.Line>{GRPC_API_ORIGIN}</Code.Line>
@@ -104,7 +104,7 @@ export default function MacOSTab({ setupKey }: Readonly<Props>) {
 
           {setupKey ? (
             <Steps.Step step={GRPC_API_ORIGIN ? 3 : 2} line={false}>
-              <p>Open Terminal and run NetBird</p>
+              <p>Open Terminal and run dcdVPN</p>
               <Code>
                 <Code.Line>
                   {getNetBirdUpCommand()}
@@ -117,7 +117,7 @@ export default function MacOSTab({ setupKey }: Readonly<Props>) {
               <Steps.Step step={GRPC_API_ORIGIN ? 3 : 2}>
                 <p>
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  Click on "Connect" from the NetBird icon in your system tray
+                  Click on "Connect" from the dcdVPN icon in your system tray
                 </p>
               </Steps.Step>
               <Steps.Step step={GRPC_API_ORIGIN ? 4 : 3} line={false}>
@@ -143,7 +143,7 @@ export default function MacOSTab({ setupKey }: Readonly<Props>) {
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={2} line={false}>
-                  <p>Run NetBird {!setupKey && "and log in the browser"}</p>
+                  <p>Run dcdVPN {!setupKey && "and log in the browser"}</p>
                   <Code>
                     <Code.Line>
                       {getNetBirdUpCommand()}
@@ -177,7 +177,7 @@ export default function MacOSTab({ setupKey }: Readonly<Props>) {
                   </div>
                 </Steps.Step>
                 <Steps.Step step={2}>
-                  <p>Install NetBird </p>
+                  <p>Install dcdVPN </p>
                   <Code
                     codeToCopy={[
                       `brew install netbirdio/tap/netbird`,
@@ -193,14 +193,14 @@ export default function MacOSTab({ setupKey }: Readonly<Props>) {
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={3}>
-                  <p>Start NetBird daemon</p>
+                  <p>Start dcdVPN daemon</p>
                   <Code>
                     <Code.Line>sudo netbird service install</Code.Line>
                     <Code.Line>sudo netbird service</Code.Line>
                   </Code>
                 </Steps.Step>
                 <Steps.Step step={4} line={false}>
-                  <p>Run NetBird {!setupKey && "and log in the browser"}</p>
+                  <p>Run dcdVPN {!setupKey && "and log in the browser"}</p>
                   <Code>
                     <Code.Line>
                       {getNetBirdUpCommand()}

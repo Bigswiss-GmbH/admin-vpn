@@ -1,14 +1,14 @@
-# NetBird Dashboard
+# dcdVPN Dashboard
 
-This project is the UI for NetBird's Management service.
+This project is the UI for dcdVPN's Management service.
 
 **Hosted version:** https://app.netbird.io/
 
-See [NetBird repo](https://github.com/netbirdio/netbird)
+See [dcdVPN repo](https://github.com/netbirdio/netbird)
 
 ## Why?
 
-The purpose of this project is simple - make it easy to manage VPN built with [NetBird](https://github.com/netbirdio/netbird).
+The purpose of this project is simple - make it easy to manage VPN built with [dcdVPN](https://github.com/netbirdio/netbird).
 The dashboard makes it possible to:
 - track the status of your peers
 - remove peers
@@ -38,13 +38,13 @@ Auth0 so far is the only 3rd party dependency that can't be really self-hosted.
 
 1. Install [Docker](https://docs.docker.com/get-docker/)
 2. Register [Auth0](https://auth0.com/) account
-3. Running NetBird UI Dashboard requires the following Auth0 environmental variables to be set (see docker command below):
+3. Running dcdVPN UI Dashboard requires the following Auth0 environmental variables to be set (see docker command below):
 
    `AUTH0_DOMAIN` `AUTH0_CLIENT_ID` `AUTH0_AUDIENCE`
 
    To obtain these, please use [Auth0 React SDK Guide](https://auth0.com/docs/quickstart/spa/react/01-login#configure-auth0) up until "Configure Allowed Web Origins"
 
-4. NetBird UI Dashboard uses NetBirds Management Service HTTP API, so setting `NETBIRD_MGMT_API_ENDPOINT` is required. Most likely it will be `http://localhost:33071` if you are hosting Management API on the same server.
+4. dcdVPN UI Dashboard uses dcdVPN Management Service HTTP API, so setting `NETBIRD_MGMT_API_ENDPOINT` is required. Most likely it will be `http://localhost:33071` if you are hosting Management API on the same server.
 5. Run docker container without SSL (Let's Encrypt):
 
    ```shell

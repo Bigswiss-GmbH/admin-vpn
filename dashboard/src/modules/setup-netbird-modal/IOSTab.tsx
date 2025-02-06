@@ -27,7 +27,7 @@ export default function IOSTab() {
               >
                 <Image
                   src={AppStoreButton}
-                  alt={"Download NetBird on the App Store"}
+                  alt={"Download dcdVPN on the App Store"}
                   height={50}
                 />
               </Link>

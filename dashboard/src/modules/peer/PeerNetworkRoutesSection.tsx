@@ -30,7 +30,7 @@ export const PeerNetworkRoutesSection = ({ peer }: Props) => {
           <div>
             <h2 ref={headingRef}>Network Routes</h2>
             <Paragraph>
-              Access other networks without installing NetBird on every
+              Access other networks without installing dcdVPN on every
               resource.
             </Paragraph>
           </div>

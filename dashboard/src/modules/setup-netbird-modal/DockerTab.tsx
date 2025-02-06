@@ -45,7 +45,7 @@ export default function DockerTab({
           </Steps.Step>
           <Steps.Step step={2}>
             <p>
-              Run NetBird container
+              Run dcdVPN container
               {showSetupKeyInfo && <RoutingPeerSetupKeyInfo />}
             </p>
             <Code>
@@ -79,7 +79,7 @@ export default function DockerTab({
               passHref={true}
               target={"_blank"}
             >
-              Running NetBird in Docker
+              Running dcdVPN in Docker
             </InlineLink>
           </Steps.Step>
         </Steps>

@@ -274,7 +274,7 @@ export default function PeersTable({ peers, isLoading, headingTarget }: Props) {
                 size={"large"}
               />
             }
-            title={"Get Started with NetBird"}
+            title={"Get Started with dcdVPN"}
             description={
               "It looks like you don't have any connected machines.\n" +
               "Get started by adding one to your network."

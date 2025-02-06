@@ -29,7 +29,7 @@ export default function AndroidTab() {
               >
                 <Image
                   src={GooglePlayButton}
-                  alt={"Download NetBird from Google Play"}
+                  alt={"Download dcdVPN from Google Play"}
                   height={50}
                 />
               </Link>

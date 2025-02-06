@@ -83,7 +83,7 @@ export default function GroupsTab({ account }: Props) {
     const choice = showConfirm
       ? await confirm({
           title: `JWT allow group - ${jwtAllowGroups[0]}`,
-          description: `Only users part of the ${jwtAllowGroups[0]} group will be able to access NetBird. Are you sure you want to save the changes?`,
+          description: `Only users part of the ${jwtAllowGroups[0]} group will be able to access dcdVPN. Are you sure you want to save the changes?`,
           confirmText: "Save",
           children: (
             <div
@@ -231,8 +231,8 @@ export default function GroupsTab({ account }: Props) {
                     <div>
                       <Label>JWT allow group</Label>
                       <HelpText>
-                        Limit access to NetBird for the specified group name,
-                        e.g., NetBird users. To use the group, you need to
+                        Limit access to dcdVPN for the specified group name,
+                        e.g., dcdVPN users. To use the group, you need to
                         configure it first in your IdP.
                       </HelpText>
                       <Input
@@ -242,7 +242,7 @@ export default function GroupsTab({ account }: Props) {
                             className={"text-nb-gray-300"}
                           />
                         }
-                        placeholder={"e.g., NetBird users"}
+                        placeholder={"e.g., dcdVPN users"}
                         value={jwtAllowGroups[0]}
                         onChange={(e) => {
                           setJwtAllowGroups([e.target.value]);

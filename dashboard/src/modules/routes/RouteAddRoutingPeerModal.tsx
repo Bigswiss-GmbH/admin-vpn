@@ -166,7 +166,7 @@ function Content({ onSuccess, groupedRoute, peer }: ModalProps) {
         icon={<NetworkRoutesIcon className={"fill-netbird"} />}
         title={"Add New Routing Peer"}
         description={
-          "When you add multiple routing peers, NetBird enables high availability for this network."
+          "When you add multiple routing peers, dcdVPN enables high availability for this network."
         }
         color={"netbird"}
       />

@@ -160,7 +160,7 @@ export function AccessTokenModalContent({ onSuccess, user }: ModalProps) {
       <ModalHeader
         icon={<IconApi />}
         title={"Create Access Token"}
-        description={"Use this token to access NetBird's public API"}
+        description={"Use this token to access dcdVPN's public API"}
         color={"netbird"}
       />
 

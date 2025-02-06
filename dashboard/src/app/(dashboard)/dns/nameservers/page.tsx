@@ -42,7 +42,7 @@ export default function NameServers() {
         </Breadcrumbs>
         <h1 ref={headingRef}>Nameservers</h1>
         <Paragraph>
-          Add nameservers for domain name resolution in your NetBird network.
+          Add nameservers for domain name resolution in your dcdVPN network.
         </Paragraph>
         <Paragraph>
           Learn more about
